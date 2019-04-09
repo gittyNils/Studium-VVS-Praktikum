@@ -1,0 +1,14 @@
+runtime: python27
+api_version: 1
+threadsafe: false
+
+inbound_services:
+- mail
+
+handlers:
+- url: /_ah/mail/.+
+  script: mailhandler.py
+
+
+- url: /.*
+  script: chatpersistant.py
